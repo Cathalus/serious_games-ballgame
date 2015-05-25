@@ -25,7 +25,7 @@ public class ChaseCamera : MonoBehaviour {
         _movementScript = Target.GetComponent<BallMovement>();
     }
 
-    void FixedUpdate()
+    void Update()
     {
         if (!Target.GetComponent<BallMovement>().LevelFinished)
         {
