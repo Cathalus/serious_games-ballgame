@@ -17,7 +17,6 @@ public class MovingPlatform : MonoBehaviour {
 
     void OnTriggerEnter(Collider other)
     {
-        print("enter");
         if(other.CompareTag(Tags.Player))
         {
             _player.transform.parent = transform;
