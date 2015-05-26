@@ -14,7 +14,7 @@ public class Platform_Wind : MonoBehaviour {
         {
             // Do Stuff
             Rigidbody playerBody = other.GetComponent<Rigidbody>();
-            playerBody.AddForce(transform.up*WindStrength*10*Time.deltaTime, ForceMode.Force);
+            playerBody.AddForce(transform.up*WindStrength*20*Time.deltaTime, ForceMode.Force);
         }
     }
 
