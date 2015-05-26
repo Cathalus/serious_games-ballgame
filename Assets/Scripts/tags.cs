@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+/// <summary>
+/// Contains references to all Tags used in the game
+/// </summary>
 public class Tags : MonoBehaviour {
 
     public const string MainCamera = "MainCamera";
