@@ -57,10 +57,12 @@ public class ItemPickup : MonoBehaviour {
                     break;
                 case CollectableType.Type.Key:
                     _items.CollectedKeys++;
+                    AudioSource.PlayClipAtPoint(SFX_Key, other.transform.position);
                     break;
                 case CollectableType.Type.Hourglass:
                     _levelController.AddTime(15);
                     _items.CollectedHourglasses++;
+                    AudioSource.PlayClipAtPoint(SFX_Hourglass, other.transform.position);
                     break;
             }
             Destroy(other.gameObject);
