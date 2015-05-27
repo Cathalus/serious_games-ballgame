@@ -66,7 +66,14 @@ public class FinalPlatform : MonoBehaviour {
                 // Advance to next level
                 if(Input.GetButtonDown("Jump") && _levelController.NextLevel != -1)
                 {
-                    Application.LoadLevel(_levelController.NextLevel);
+                    if (!Debug.isDebugBuild)
+                    {
+                        Application.LoadLevel(_levelController.NextLevel);
+                    }
+                    else
+                    {
+                        Debug.Log("Debug build: not switching to next level!");
+                    }
                 }
             }
             // Player Rotation effect
