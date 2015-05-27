@@ -7,6 +7,21 @@ using System.Collections;
 public class ItemPickup : MonoBehaviour {
 
     /// <summary>
+    /// Key sound effect
+    /// </summary>
+    [SerializeField]
+    private AudioClip SFX_Key;
+    /// <summary>
+    /// Hourglass sound effect
+    /// </summary>
+    [SerializeField]
+    private AudioClip SFX_Hourglass;
+    /// <summary>
+    /// Coin sound effect
+    /// </summary>
+    [SerializeField]
+    private AudioClip SFX_Coin;
+    /// <summary>
     /// Reference to the GameController
     /// </summary>
     private GameObject _gameController;
@@ -38,12 +53,14 @@ public class ItemPickup : MonoBehaviour {
             {
                 case CollectableType.Type.Coin:
                     _items.CollectedCoins++;
+                    AudioSource.PlayClipAtPoint(SFX_Coin, other.transform.position);
                     break;
                 case CollectableType.Type.Key:
                     _items.CollectedKeys++;
                     break;
                 case CollectableType.Type.Hourglass:
                     _levelController.AddTime(15);
+                    _items.CollectedHourglasses++;
                     break;
             }
             Destroy(other.gameObject);
